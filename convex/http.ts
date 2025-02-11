@@ -76,3 +76,23 @@ http.route({
 });
 
 export default http;
+
+/*
+
+Workflow:
+
+    *Clerk Webhook Trigger:
+A new user signs up via Clerk.
+Clerk sends a user.created webhook event to your Convex server.
+
+    *Convex HTTP Handler:
+The http.ts file receives the webhook, verifies it, and extracts the user data.
+
+    *Calling syncUser:
+The syncUser mutation is called with the user's data (clerkId, email, name, and image).
+
+    *Database Update:
+The syncUser mutation checks if the user already exists in the database.
+If not, it inserts the new user with a default role of 'candidate'.
+
+*/
