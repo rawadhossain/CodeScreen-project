@@ -25,7 +25,7 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
                     user?.id,
                 image: user?.imageUrl,
             },
-            tokenProvider: streamTokenProvider,
+            tokenProvider: streamTokenProvider, //generates a secure token for the user to authenticate with Stream.io
         });
 
         setStreamVideoClient(client);

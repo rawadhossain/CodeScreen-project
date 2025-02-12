@@ -8,6 +8,7 @@ export const streamTokenProvider = async () => {
 
     if (!user) throw new Error('User not authenticated');
 
+    // StreamClient: server-side Stream.io client used to generate user tokens
     const streamClient = new StreamClient(
         process.env.NEXT_PUBLIC_STREAM_API_KEY!,
         process.env.STREAM_SECRET_KEY!,
