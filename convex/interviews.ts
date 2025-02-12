@@ -3,8 +3,8 @@ import { v } from 'convex/values';
 
 export const getAllInterviews = query({
     handler: async (ctx) => {
-        const identity = await ctx.auth.getUserIdentity();
-        if (!identity) throw new Error('Unauthorized');
+        const userIdentity = await ctx.auth.getUserIdentity();
+        if (!userIdentity) throw new Error('Unauthorized');
 
         const interviews = await ctx.db.query('interviews').collect();
 
@@ -14,13 +14,13 @@ export const getAllInterviews = query({
 
 export const getMyInterviews = query({
     handler: async (ctx) => {
-        const identity = await ctx.auth.getUserIdentity();
-        if (!identity) return [];
+        const userIdentity = await ctx.auth.getUserIdentity();
+        if (!userIdentity) return [];
 
         const interviews = await ctx.db
             .query('interviews')
             .withIndex('by_candidate_id', (q) =>
-                q.eq('candidateId', identity.subject),
+                q.eq('candidateId', userIdentity.subject),
             )
             .collect();
 
@@ -51,8 +51,8 @@ export const createInterview = mutation({
         interviewerIds: v.array(v.string()),
     },
     handler: async (ctx, args) => {
-        const identity = await ctx.auth.getUserIdentity();
-        if (!identity) throw new Error('Unauthorized');
+        const userIdentity = await ctx.auth.getUserIdentity();
+        if (!userIdentity) throw new Error('Unauthorized');
 
         return await ctx.db.insert('interviews', {
             ...args,
@@ -62,7 +62,7 @@ export const createInterview = mutation({
 
 export const updateInterviewStatus = mutation({
     args: {
-        id: v.id('interviews'),
+        id: v.id('interviews'), // every document in a table is assigned a unique ID when it is created
         status: v.string(),
     },
     handler: async (ctx, args) => {
