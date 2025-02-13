@@ -8,7 +8,7 @@ import { CallRecording } from '@stream-io/video-react-sdk';
 import { useEffect, useState } from 'react';
 
 function RecordingsPage() {
-    const { calls, isLoading } = useGetCalls();
+    const { calls, isLoading } = useGetCalls(); // fetches calls categorized into endedCalls, upcomingCalls, and liveCalls
     const [recordings, setRecordings] = useState<CallRecording[]>([]);
 
     useEffect(() => {
