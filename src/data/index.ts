@@ -89,6 +89,17 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
         
     }
 }`,
+            cpp: `class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        // Write your solution here
+        
+    }
+};`,
+            typescript: `function twoSum(nums: number[], target: number): number[] {
+    // Write your solution here
+    
+}`,
         },
         constraints: [
             '2 ≤ nums.length ≤ 104',
@@ -126,6 +137,17 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
         
     }
 }`,
+            cpp: `class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        // Write your solution here
+        
+    }
+};`,
+            typescript: `function reverseString(s: string[]): void {
+    // Write your solution here
+    
+}`,
         },
     },
     {
@@ -161,14 +183,27 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
         
     }
 }`,
+            cpp: `class Solution {
+public:
+    bool isPalindrome(int x) {
+        // Write your solution here
+        
+    }
+};`,
+            typescript: `function isPalindrome(x: number): boolean {
+    // Write your solution here
+    
+}`,
         },
     },
 ];
 
 export const LANGUAGES = [
     { id: 'javascript', name: 'JavaScript', icon: '/javascript.png' },
+    { id: 'C++', name: 'C++', icon: '/c++.png' },
     { id: 'python', name: 'Python', icon: '/python.png' },
     { id: 'java', name: 'Java', icon: '/java.png' },
+    { id: 'typescript', name: 'TypeScript', icon: '/typescript.png' },
 ] as const;
 
 export interface CodeQuestion {
@@ -184,6 +219,8 @@ export interface CodeQuestion {
         javascript: string;
         python: string;
         java: string;
+        cpp: string; // Added C++ support
+        typescript: string; // Added TypeScript support
     };
     constraints?: string[];
 }
