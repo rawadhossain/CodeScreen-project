@@ -11,23 +11,45 @@ function Navbar() {
         <nav className="border-b">
             <div className="flex h-16 items-center px-4 container mx-auto">
                 {/* LEFT SIDE -LOGO */}
-                <Link
-                    href="/"
-                    className="flex items-center gap-2 font-semibold text-2xl mr-6 font-mono hover:opacity-80 transition-opacity"
-                >
-                    <div className="flex justify-center items-center h-full w-auto max-w-[80px]">
-                        <Image
-                            src={'/logo.svg'}
-                            alt="logo"
-                            width={100} // Control max width
-                            height={60} // Control max height
-                            className="object-contain max-h-full w-auto"
-                        />
-                    </div>
-                    <span className="bg-gradient-to-r from-teal-400 to-blue-600 bg-clip-text text-transparent">
-                        CodeScreen
-                    </span>
-                </Link>
+                <SignedIn>
+                    <Link
+                        href="/home"
+                        className="flex items-center gap-2 font-semibold text-2xl mr-6 font-mono hover:opacity-80 transition-opacity"
+                    >
+                        <div className="flex justify-center items-center h-full w-auto max-w-[80px]">
+                            <Image
+                                src={'/logo.svg'}
+                                alt="logo"
+                                width={100} // Control max width
+                                height={60} // Control max height
+                                className="object-contain max-h-full w-auto"
+                            />
+                        </div>
+                        <span className="bg-gradient-to-r from-teal-400 to-blue-600 bg-clip-text text-transparent">
+                            CodeScreen
+                        </span>
+                    </Link>
+                </SignedIn>
+
+                <SignedOut>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 font-semibold text-2xl mr-6 font-mono hover:opacity-80 transition-opacity"
+                    >
+                        <div className="flex justify-center items-center h-full w-auto max-w-[80px]">
+                            <Image
+                                src={'/logo.svg'}
+                                alt="logo"
+                                width={100} // Control max width
+                                height={60} // Control max height
+                                className="object-contain max-h-full w-auto"
+                            />
+                        </div>
+                        <span className="bg-gradient-to-r from-teal-400 to-blue-600 bg-clip-text text-transparent">
+                            CodeScreen
+                        </span>
+                    </Link>
+                </SignedOut>
 
                 {/* RIGHT SIDE - ACTIONS */}
 
