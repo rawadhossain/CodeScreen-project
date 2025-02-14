@@ -14,6 +14,21 @@ pnpm dev
 bun dev
 ```
 
+Environment variables can be set in the `.env` file.
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# Deployment used by `npx convex dev`
+CONVEX_DEPLOYMENT=
+
+NEXT_PUBLIC_CONVEX_URL=
+
+NEXT_PUBLIC_STREAM_API_KEY=
+STREAM_SECRET_KEY=
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
