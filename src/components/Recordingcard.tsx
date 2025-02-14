@@ -60,6 +60,7 @@ function RecordingCard({ recording }: { recording: CallRecording }) {
             </CardContent>
             <CardFooter className="gap-2">
                 <Button
+                    variant="ocean"
                     className="flex-1"
                     onClick={() => window.open(recording.url, '_blank')}
                 >

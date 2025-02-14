@@ -55,6 +55,7 @@ const MeetingModal = ({
                             Cancel
                         </Button>
                         <Button
+                            variant="ocean"
                             onClick={handleStart}
                             disabled={isJoinMeeting && !meetingUrl.trim()}
                         >

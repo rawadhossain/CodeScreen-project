@@ -26,19 +26,24 @@ body {
         --secondary-foreground: 240 5.9% 10%;
         --muted: 240 4.8% 95.9%;
         --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
+        --accent: 192 96% 44%; /* Updated to match ocean theme */
+        --accent-foreground: 0 0% 100%; /* White text for contrast */
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
         --border: 240 5.9% 90%;
         --input: 240 5.9% 90%;
-        --ring: 142.1 76.2% 36.3%;
+        --ring: 192 96% 44%; /* Matching ocean theme */
         --radius: 0.75rem;
         --chart-1: 12 76% 61%;
         --chart-2: 173 58% 39%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
+        --ocean-gradient: linear-gradient(
+            to right,
+            hsl(174, 72%, 45%),
+            hsl(206, 75%, 44%)
+        );
     }
 
     .dark {
@@ -54,18 +59,23 @@ body {
         --secondary-foreground: 0 0% 98%;
         --muted: 0 0% 15%;
         --muted-foreground: 240 5% 64.9%;
-        --accent: 12 6.5% 15.1%;
-        --accent-foreground: 0 0% 98%;
+        --accent: 192 96% 44%; /* Consistent ocean color */
+        --accent-foreground: 0 0% 100%;
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 85.7% 97.3%;
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
-        --ring: 142.4 71.8% 29.2%;
+        --ring: 192 96% 44%;
         --chart-1: 220 70% 50%;
         --chart-2: 160 60% 45%;
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+        --ocean-gradient: linear-gradient(
+            to right,
+            hsl(174, 72%, 45%),
+            hsl(206, 75%, 44%)
+        );
     }
 }
 
@@ -75,5 +85,46 @@ body {
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    /* Ocean themed icon styles */
+    .icon-ocean {
+        @apply text-teal-500 group-hover:text-blue-600 transition-colors;
+    }
+
+    /* Ocean themed switch */
+    .switch-ocean {
+        @apply data-[state=checked]:bg-gradient-to-r from-teal-400 to-blue-600;
+    }
+
+    .ocean-bg {
+        @apply bg-gradient-to-r from-teal-400 to-blue-600 text-white shadow-lg shadow-teal-500/20 hover:from-teal-400/90 hover:to-blue-600/90 hover:shadow-teal-500/30 active:scale-[0.98] transition-all duration-200;
+    }
+
+    /* .gradient-title {
+        @apply font-extrabold bg-gradient-to-r from-teal-400 to-blue-600 bg-clip-text tracking-tighter text-transparent pr-2 pb-2;
+    } */
+
+    .gradient-title {
+        @apply font-extrabold text-5xl text-transparent bg-clip-text bg-gradient-to-br from-teal-400 to-blue-600 relative;
+    }
+
+    .gradient-underline {
+        position: relative;
+        display: inline-block;
+    }
+
+    .gradient-underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -15px; /* Adjust to control spacing */
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(to right, #0d9488, #2563eb);
+        border-radius: 9999px;
+        box-shadow: 0px 0px 8px rgba(13, 148, 136, 0.7);
     }
 }

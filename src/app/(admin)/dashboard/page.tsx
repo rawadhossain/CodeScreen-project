@@ -54,7 +54,7 @@ function DashboardPage() {
         <div className="container mx-auto py-10">
             <div className="flex items-center mb-8">
                 <Link href="/schedule">
-                    <Button>Schedule New Interview</Button>
+                    <Button variant="ocean">Schedule New Interview</Button>
                 </Link>
             </div>
 
@@ -143,6 +143,7 @@ function DashboardPage() {
                                                             'completed' && (
                                                             <div className="flex gap-2 w-full">
                                                                 <Button
+                                                                    variant="ocean"
                                                                     className="flex-1"
                                                                     onClick={() =>
                                                                         handleStatusUpdate(

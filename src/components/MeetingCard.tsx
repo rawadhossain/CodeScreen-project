@@ -62,6 +62,7 @@ function MeetingCard({ interview }: { interview: Interview }) {
             <CardContent>
                 {status === 'live' && (
                     <Button
+                        variant="ocean"
                         className="w-full"
                         onClick={() => joinMeeting(interview.streamCallId)}
                     >

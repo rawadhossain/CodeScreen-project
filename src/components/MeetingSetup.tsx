@@ -58,7 +58,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                     {/* CARD CONTROLS */}
                     <Card className="md:col-span-1 p-6">
                         <div className="h-full flex flex-col">
-                            {/* MEETING DETAILS  */}
+                            {/* MEETING DETAILS */}
                             <div>
                                 <h2 className="text-xl font-semibold mb-1">
                                     Meeting Details
@@ -74,7 +74,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-3">
                                             <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                                                <CameraIcon className="h-5 w-5 text-primary" />
+                                                <CameraIcon className="h-5 w-5 icon-ocean" />
                                             </div>
                                             <div>
                                                 <p className="font-medium">
@@ -92,6 +92,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                             onCheckedChange={(checked) =>
                                                 setIsCameraDisabled(!checked)
                                             }
+                                            className="switch-ocean"
                                         />
                                     </div>
 
@@ -99,7 +100,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-3">
                                             <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                                                <MicIcon className="h-5 w-5 text-primary" />
+                                                <MicIcon className="h-5 w-5 icon-ocean" />
                                             </div>
                                             <div>
                                                 <p className="font-medium">
@@ -117,6 +118,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                             onCheckedChange={(checked) =>
                                                 setIsMicDisabled(!checked)
                                             }
+                                            className="switch-ocean"
                                         />
                                     </div>
 
@@ -124,7 +126,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-3">
                                             <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                                                <SettingsIcon className="h-5 w-5 text-primary" />
+                                                <SettingsIcon className="h-5 w-5 icon-ocean" />
                                             </div>
                                             <div>
                                                 <p className="font-medium">
@@ -142,6 +144,7 @@ const MeetingSetup = ({ onSetupComplete }: { onSetupComplete: () => void }) => {
                                 {/* JOIN BTN */}
                                 <div className="space-y-3 mt-8">
                                     <Button
+                                        variant="ocean"
                                         className="w-full"
                                         size="lg"
                                         onClick={handleJoin}

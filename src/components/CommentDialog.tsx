@@ -196,7 +196,9 @@ function CommentDialog({ interviewId }: { interviewId: Id<'interviews'> }) {
                     <Button variant="outline" onClick={() => setIsOpen(false)}>
                         Cancel
                     </Button>
-                    <Button onClick={handleSubmit}>Submit</Button>
+                    <Button variant="ocean" onClick={handleSubmit}>
+                        Submit
+                    </Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

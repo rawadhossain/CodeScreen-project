@@ -15,12 +15,13 @@ type ActionProps = {
 const ActionCard = ({ action, onClick }: ActionProps) => {
     return (
         <Card
-            className="group relative overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer"
+            className="group relative overflow-hidden hover:border-[color:var(--ocean-gradient)] transition-all duration-300 hover:shadow-lg cursor-pointer"
             onClick={onClick}
         >
-            {/* ACTION GRADIENT */}
+            {/* ACTION GRADIENT (Keeps original background, changes on hover) */}
             <div
-                className={`absolute inset-0 bg-gradient-to-br ${action.gradient} opacity-100 group-hover:opacity-50 transition-opacity`}
+                className={`absolute inset-0 bg-gradient-to-br ${action.gradient} opacity-100 
+                group-hover:opacity-50 group-hover:from-teal-400 group-hover:to-blue-600 transition-all`}
             />
 
             {/* ACTION CONTENT WRAPPER */}
@@ -28,16 +29,15 @@ const ActionCard = ({ action, onClick }: ActionProps) => {
                 <div className="space-y-3">
                     {/* ACTION ICON */}
                     <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center bg-${action.color}/10 group-hover:scale-110 transition-transform`}
+                        className="w-12 h-12 rounded-full flex items-center justify-center bg-accent/10 
+                        group-hover:bg-[color:var(--ocean-gradient)] group-hover:text-white transition-all"
                     >
-                        <action.icon
-                            className={`h-6 w-6 text-${action.color}`}
-                        />
+                        <action.icon className="h-6 w-6 text-accent group-hover:text-white" />
                     </div>
 
                     {/* ACTION DETAILS */}
                     <div className="space-y-1">
-                        <h3 className="font-semibold text-xl group-hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-xl group-hover:text-[color:var(--ocean-gradient)] transition-colors">
                             {action.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">

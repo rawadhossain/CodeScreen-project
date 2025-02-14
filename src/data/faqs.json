@@ -1,0 +1,30 @@
+[
+    {
+        "q": "What is a closure in JavaScript?",
+        "a": "A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. It allows the function to remember variables from the outer function after it has finished executing."
+    },
+    {
+        "q": "Explain the difference between `==` and `===` in JavaScript.",
+        "a": "`==` is a loose equality operator that compares values after converting them to a common type (type coercion). `===` is a strict equality operator that compares both the value and the type, without type conversion."
+    },
+    {
+        "q": "What is the purpose of a callback function?",
+        "a": "A callback function is a function that is passed as an argument to another function and is executed after the completion of that function’s task. It's commonly used in asynchronous programming to handle tasks like reading files or making network requests."
+    },
+    {
+        "q": "What are the differences between `var`, `let`, and `const` in JavaScript?",
+        "a": "`var` is function-scoped and can be re-declared or updated. `let` is block-scoped and can be updated but not re-declared within the same scope. `const` is also block-scoped but cannot be updated or re-declared."
+    },
+    {
+        "q": "What is a promise in JavaScript?",
+        "a": "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation. It allows you to attach `.then()` and `.catch()` handlers to manage the result or error of the asynchronous task."
+    },
+    {
+        "q": "Explain the concept of inheritance in object-oriented programming.",
+        "a": "Inheritance allows a class to inherit properties and methods from another class. It promotes reusability and a hierarchical relationship between classes. In JavaScript, inheritance is typically implemented via prototypes or the `class` syntax."
+    },
+    {
+        "q": "What is the difference between `null` and `undefined` in JavaScript?",
+        "a": "`null` is an assigned value that represents the intentional absence of any object value, whereas `undefined` indicates that a variable has been declared but has not yet been assigned a value."
+    }
+]
